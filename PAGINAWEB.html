@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agencia de Apartamentos Turísticos en Granada</title>
+
+    <!-- Vinculamos con Google Fonts para usar tipografía moderna -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Poppins:wght@300;500&display=swap" rel="stylesheet">
+
+    <style>
+        /* Reset y estilos básicos */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            color: #333;
+            line-height: 1.6;
+            background-color: #f7f7f7;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        /* Imagen de fondo para la cabecera */
+        .bg-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background-image: url(https://cdn.pixabay.com/photo/2022/08/25/14/09/granada-7410424_960_720.jpg); /* Imagen de fondo de Granada */
+            background-size: cover;
+            background-position: center;
+            filter: brightness(40%);
+            z-index: -1;
+            opacity: 0.8;
+        }
+
+        /* Contenedor principal */
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+            padding: 20px;
+        }
+
+        header {
+            font-size: 3rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        p {
+            font-size: 1.2rem;
+            color: white;
+            max-width: 800px;
+            margin-bottom: 30px;
+            line-height: 1.7;
+        }
+
+        /* Botones de llamada a la acción */
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        .cta-buttons a {
+            padding: 15px 30px;
+            background-color: #ff7f50;
+            color: white;
+            text-decoration: none;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .cta-buttons a:hover {
+            background-color: #e66b42;
+        }
+
+        /* Apartamentos */
+        #apartamentos {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            padding: 50px 20px;
+            background-color: #fff;
+        }
+
+        .apartamento {
+            background-color: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .apartamento:hover {
+            transform: translateY(-10px);
+        }
+
+        .apartamento img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-bottom: 2px solid #ddd;
+        }
+
+        .apartamento h3 {
+            margin-top: 15px;
+            font-size: 1.5rem;
+            color: #333;
+        }
+
+        .apartamento p {
+            margin-top: 10px;
+            font-size: 1rem;
+            color: #666;
+        }
+
+        /* Descripción de la empresa */
+        #empresa {
+            padding: 50px 20px;
+            text-align: center;
+            background-color: #f4f4f4;
+        }
+
+        #empresa h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        #empresa p {
+            font-size: 1.2rem;
+            max-width: 900px;
+            margin: 0 auto;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        /* Actividades para hacer en Granada */
+        #actividades {
+            background-color: #fff;
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        #actividades h2 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            font-weight: 600;
+        }
+
+        .actividad {
+            display: inline-block;
+            width: 280px;
+            background-color: #fff;
+            padding: 20px;
+            margin: 15px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            text-align: left;
+            transition: transform 0.3s ease;
+        }
+
+        .actividad:hover {
+            transform: translateY(-10px);
+        }
+
+        .actividad img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .actividad h3 {
+            margin-top: 15px;
+            font-size: 1.5rem;
+            color: #333;
+        }
+
+        .actividad p {
+            font-size: 1rem;
+            color: #666;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 15px 0;
+            text-align: center;
+            font-size: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Imagen de fondo -->
+    <div class="bg-image"></div>
+
+    <!-- Contenido principal -->
+    <div class="container">
+        <header>
+            Agencia de Apartamentos Turísticos en Granada
+        </header>
+        <p>Disfruta de Granada desde nuestros exclusivos apartamentos, diseñados para brindarte comodidad, estilo y una experiencia única.</p>
+
+        <!-- Botones de llamada a la acción -->
+        <div class="cta-buttons">
+            <a href="#apartamentos">Ver Apartamentos</a>
+            <a href="#contacto">Contacto</a>
+        </div>
+    </div>
+
+    <!-- Apartamentos -->
+    <section id="apartamentos">
+        <div class="apartamento">
+            <img src="https://cdn.pixabay.com/photo/2020/01/23/02/29/house-4786769_960_720.jpg" alt="Apartamento 1"> <!-- URL de la foto del apartamento 1 -->
+            <h3>Apartamento Alhambra</h3>
+            <p>Vistas espectaculares a la Alhambra, ideal para una estancia tranquila y confortable.</p>
+        </div>
+        <div class="apartamento">
+            <img src="https://cdn.pixabay.com/photo/2019/12/17/04/52/lounge-4700728_960_720.jpg" alt="Apartamento 2"> <!-- URL de la foto del apartamento 2 -->
+            <h3>Apartamento Centro</h3>
+            <p>Ubicado en el corazón de Granada, perfecto para explorar la ciudad.</p>
+        </div>
+        <div class="apartamento">
+            <img src="https://cdn.pixabay.com/photo/2023/11/21/12/31/living-room-8403277_960_720.jpg" alt="Apartamento 3"> <!-- URL de la foto del apartamento 3 -->
+            <h3>Apartamento Albaicín</h3>
+            <p>En el barrio más pintoresco de Granada, con todas las comodidades.</p>
+        </div>
+    </section>
+
+    <!-- Descripción de la empresa -->
+    <section id="empresa">
+        <h2>Sobre Nosotros</h2>
+        <p>Somos una agencia dedicada a ofrecer apartamentos turísticos de calidad en Granada. Nuestra misión es proporcionar a nuestros huéspedes una experiencia única y cómoda, con apartamentos completamente equipados y ubicados en las mejores zonas de la ciudad.</p>
+    </section>
+
+    <!-- Actividades para hacer en Granada -->
+    <section id="actividades">
+        <h2>Actividades para Hacer en Granada</h2>
+        <div class="actividad">
+            <img src="https://cdn.pixabay.com/photo/2014/10/25/22/57/alhambra-503198_640.jpg" alt="Visitar la Alhambra">
+            <h3>Visitar la Alhambra</h3>
+            <p>La joya de Granada, un palacio y fortaleza morisca con vistas impresionantes.</p>
+        </div>
+        <div class="actividad">
+            <img src="https://cdn.pixabay.com/photo/2018/01/26/07/32/granada-3107980_1280.jpg" alt="Pasear por el Albaicín">
+            <h3>Pasear por el Albaicín</h3>
+            <p>Recorre las estrechas calles empedradas del antiguo barrio árabe de Granada.</p>
+        </div>
+        <div class="actividad">
+            <img src="https://cdn.pixabay.com/photo/2017/04/26/11/08/lobby-lounge-2262348_640.jpg" alt="Disfrutar de las tapas">
+            <h3>Disfrutar de las Tapas</h3>
+            <p>Granada es famosa por su tradición de tapas gratis con cada bebida en los bares.</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Agencia de Apartamentos Turísticos en Granada | Todos los derechos reservados</p>
+    </footer>
+</body>
+</html>
